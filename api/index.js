@@ -7,11 +7,15 @@ require('dotenv').config();
 
 const app = express();
 app.use(express.json());
-app.use(cors({ origin: process.env.ALLOWED_ORIGIN, credentials: true }));
+
+const ORIGIN = process.env.ALLOWE_ORIGIN || '*';
+app.use(cors({ origin: ORIGIN, credentials: true }));
 
 const pool = new Pool({ connectionString: process.env.POSTGRES_URL });
 const JWT_SECRET = process.env.JWT_SECRET;
 const INGEST_KEY = process.env.INGEST_KEY;
+
+
 
 // ---------- AUTH ----------
 app.post('/register', async (req, res) => {

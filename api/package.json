@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "type": "commonjs",
-  "scripts": { "start": "nodemon index.js" },
+  "scripts": {
+    "start": "nodemon index.js"
+  },
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
